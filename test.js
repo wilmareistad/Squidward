@@ -7,9 +7,9 @@ function sayHello() {
 }
 
 // Variabler
-let x = 5;
-const a = "test";
-var temp = 10;
+// let å = 5;
+// const å = "test";
+// var å = 10;
 
 // Massa tomma rader för att överstiga 200
 // Vi skriver ut 190 tomma rader
@@ -18,5 +18,5 @@ var temp = 10;
 
 
 
-let u = 5;
-const o = "test";
+// let å = 5;
+// const å = "test";
