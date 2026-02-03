@@ -1,7 +1,7 @@
-export function checkFileLength(code, maxLines = 200) {
+export function checkFileLength(code, maxLines = 5) {
   const results = [];
 
-  const lines = code.split("\n").checkFileLength;
+  const lines = code.split("\n").length;
 
   if (lines > maxLines) {
     results.push({

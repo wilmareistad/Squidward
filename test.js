@@ -1,0 +1,19 @@
+// test.js
+// Detta är en testfil för analysverktyget
+
+// Lite funktioner
+function sayHello() {
+  console.log("Hello world!");
+}
+
+// Variabler
+let x = 5;
+const data = "test";
+var temp = 10;
+
+// Massa tomma rader för att överstiga 200
+// Vi skriver ut 190 tomma rader
+
+let y = 5;
+const o = "test";
+var temp = 10;
