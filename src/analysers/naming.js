@@ -1,7 +1,7 @@
-export function getVariableNames(code) {
+export function checkVariableNames(code) {
   const results = [];
 
-  const badVar = /\b(var|let|const)\s+(x|temp|data)\b/g; //b=word boundary, hela ord.
+  const badVar = /\b(var|let|const)\s+(x|temp|o)\b/g; //b=word boundary, hela ord.
 
   let match;
   while ((match = badVar.exec(code)) !== null) {

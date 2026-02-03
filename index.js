@@ -1,5 +1,5 @@
 // Alla analysers
-// import { checkVariableNames } from "./src/analysers/naming.js";
+import { checkVariableNames } from "./src/analysers/naming.js";
 import {
   checkFileLength,
 } from "./src/analysers/length.js";
@@ -34,12 +34,21 @@ try {
   process.exit(1);
 }
 
-const allResults = [...checkFileLength(code)];
+const allResults = [
+    ...checkFileLength(code),
+    ...checkVariableNames(code)
+];
 
 allResults.forEach((r) => {
   if (r.type === 'length') {
     r.passiveMessage = passive.tooLongFile(file, r.lines);
     r.seriousMessage = serious.tooLongFile(file, r.lines);
+  }
+
+  if (r.type === 'naming') {
+    r.passiveMessage = passive.badVariableName(r.name)
+    r.seriousMessage = serious.badVariableName(r.name)
+
   }
 })
 
