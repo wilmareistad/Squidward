@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "![squidward](https://nickelodeonuniverse.com/wp-content/uploads/Squidward.png)",
   "main": "index.js",
+  "bin": {
+    "squidward": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

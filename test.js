@@ -18,5 +18,5 @@ function sayHello() {
 
 
 
-// let å = 5;
+let x = 5;
 // const å = "test";
