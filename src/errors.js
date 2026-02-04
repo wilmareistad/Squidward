@@ -1,0 +1,1 @@
+export function handleError(message, exitCode = 1) {}
