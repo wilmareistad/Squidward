@@ -8,7 +8,7 @@ function sayHello() {
 
 // Variabler
 // let å = 5;
-// const å = "test";
+const temp = "test";
 // var å = 10;
 
 // Massa tomma rader för att överstiga 200

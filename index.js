@@ -50,8 +50,8 @@ allResults.forEach((r) => {
   }
 
   if (r.type === "naming") {
-    r.passiveMessage = passive.badVariableName(r.name);
-    r.seriousMessage = serious.badVariableName(r.name);
+    r.passiveMessage = passive.badVariableName(r.name, r.line);
+    r.seriousMessage = serious.badVariableName(r.name, r.line);
   }
 });
 

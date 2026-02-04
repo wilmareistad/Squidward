@@ -5,11 +5,14 @@ export function checkVariableNames(code) {
 
   let match;
   while ((match = badVar.exec(code)) !== null) {
+    const line = code.slice(0, match.index).split("\n").length;
+
     results.push({
       type: "naming",
-      name: match[2], // variabelnamnet
-      declaration: match[1], // var, let eller const
+      name: match[2],
+      declaration: match[1], // var, let or const
       index: match.index,
+      line: line,
     });
   }
 
