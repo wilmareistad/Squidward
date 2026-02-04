@@ -5,7 +5,7 @@ import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 // import { checkDuplications } from "./src/analysers/duplication.js";
 
-import { handleError } from "./src/utils/errors.js";
+import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
 
 // Meddelanden
