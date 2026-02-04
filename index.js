@@ -3,7 +3,7 @@
 // analysers
 import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
-// import { checkDuplications } from "./src/analysers/duplication.js";
+import { checkDuplicates } from "./src/analysers/duplicates.js";
 
 import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
@@ -23,7 +23,10 @@ program
   .name("squidward")
   .description("A code analysis tool")
   .argument("<file>", "file to analyse")
-  .option("--serious", "use serious messages instead of passive")
+  .option(
+    "--serious",
+    "use serious messages. Default is passive aggressive mode",
+  )
   .parse(process.argv);
 
 const file = program.args[0];
@@ -41,7 +44,11 @@ if (!code.trim()) {
   handleError("File is empty.");
 }
 
-const allResults = [...checkFileLength(code), ...checkVariableNames(code)];
+const allResults = [
+  ...checkFileLength(code),
+  ...checkVariableNames(code),
+  ...checkDuplicates(code),
+];
 
 allResults.forEach((r) => {
   if (r.type === "length") {
@@ -52,6 +59,11 @@ allResults.forEach((r) => {
   if (r.type === "naming") {
     r.passiveMessage = passive.badVariableName(r.name, r.line);
     r.seriousMessage = serious.badVariableName(r.name, r.line);
+  }
+
+  if (r.type === "duplication") {
+    r.passiveMessage = passive.duplicateCode(r.lines);
+    r.seriousMessage = serious.duplicateCode(r.lines);
   }
 });
 
