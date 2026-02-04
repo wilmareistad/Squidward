@@ -4,11 +4,9 @@
 import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 // import { checkDuplications } from "./src/analysers/duplication.js";
-// import { checkTodos } from "./src/analysers/todos.js";
 
+import { handleError } from "./src/utils/errors.js";
 import { readFileSync } from "fs";
-// import { argv } from "process"; kan tas bort snart
-import { Command } from "commander";
 
 // Meddelanden
 import { passive } from "./src/messages/passive.js";
@@ -16,6 +14,8 @@ import { serious } from "./src/messages/serious.js";
 
 // Formattering
 import { printResults } from "./src/output/formatter.js";
+
+import { Command } from "commander";
 
 const program = new Command();
 
@@ -34,8 +34,11 @@ let code;
 try {
   code = readFileSync(file, "utf-8");
 } catch {
-  console.log("File not found or unreadable.");
-  process.exit(1);
+  handleError(`File not found or unreadable: ${file}`);
+}
+
+if (!code.trim()) {
+  handleError("File is empty.");
 }
 
 const allResults = [...checkFileLength(code), ...checkVariableNames(code)];
