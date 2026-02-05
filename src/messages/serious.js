@@ -1,10 +1,12 @@
 export const serious = {
-  tooLongFile: (filename, lines) =>
-    `Filen ${filename} har ${lines} rader, vilket överskrider maxgränsen!`,
+  header: () => `⚠️ Founded issues:`, 
+
+  tooLongFile: (filename, lines) => 
+    `File "${filename}" is too long (${lines} lines). Consider breaking it up.`,
 
   badVariableName: (varName, line) =>
-    `Line ${line}: It is hard to understand "${varName}", use another name`,
+    `Line ${line}: Variable "${varName}" is unclear and should be renamed`,
 
   duplicateCode: (lines) =>
-    `Duplicate code found at lines ${lines.join(", ")}. Refactor this immediately.`,
+    `Duplicate code found at lines: ${lines.join(", ")}. Use DRY code.`
 };
