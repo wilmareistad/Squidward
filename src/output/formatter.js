@@ -6,8 +6,10 @@ export function printResults(results, mode = "passive") {
     return;
   }
 
-  results.forEach((r) => {
-    const message = mode === "serious" ? r.seriousMessage : r.passiveMessage;
+  const grouped = {};
+  
+  results.forEach((result) => {
+    const message = mode === "serious" ? result.seriousMessage : result.passiveMessage;
     console.log(chalk.cyanBright(`⚠️ ${message}`));
   });
 }

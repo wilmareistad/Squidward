@@ -50,20 +50,20 @@ const allResults = [
   ...checkDuplicates(code),
 ];
 
-allResults.forEach((r) => {
-  if (r.type === "length") {
-    r.passiveMessage = passive.tooLongFile(file, r.lines);
-    r.seriousMessage = serious.tooLongFile(file, r.lines);
+allResults.forEach((result) => {
+  if (result.type === "length") {
+    result.passiveMessage = passive.tooLongFile(file, result.lines);
+    result.seriousMessage = serious.tooLongFile(file, result.lines);
   }
 
-  if (r.type === "naming") {
-    r.passiveMessage = passive.badVariableName(r.name, r.line);
-    r.seriousMessage = serious.badVariableName(r.name, r.line);
+  if (result.type === "naming") {
+    result.passiveMessage = passive.badVariableName(result.name, result.line);
+    result.seriousMessage = serious.badVariableName(result.name, result.line);
   }
 
-  if (r.type === "duplication") {
-    r.passiveMessage = passive.duplicateCode(r.lines);
-    r.seriousMessage = serious.duplicateCode(r.lines);
+  if (result.type === "duplication") {
+    result.passiveMessage = passive.duplicateCode(result.lines);
+    result.seriousMessage = serious.duplicateCode(result.lines);
   }
 });
 
