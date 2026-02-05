@@ -57,8 +57,16 @@ allResults.forEach((result) => {
   }
 
   if (result.type === "naming") {
-    result.passiveMessage = passive.badVariableName(result.name, result.line);
-    result.seriousMessage = serious.badVariableName(result.name, result.line);
+    result.passiveMessage = passive.badVariableName(
+      result.name,
+      result.line,
+      r.reason,
+    );
+    result.seriousMessage = serious.badVariableName(
+      result.name,
+      result.line,
+      r.reason,
+    );
   }
 
   if (result.type === "duplication") {
