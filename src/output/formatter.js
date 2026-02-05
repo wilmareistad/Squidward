@@ -15,6 +15,11 @@ export function printResults(results, mode = "passive") {
   results.forEach((result) => {
     const message =
       mode === "serious" ? result.seriousMessage : result.passiveMessage;
-    console.log(chalk.cyanBright(`⚠️ ${message}`));
+
+    const coloredMessage = mode === "serious"
+      ? chalk.cyanBright(message)
+      : chalk.hex('#FDA17D')(message);
+
+    console.log(coloredMessage);
   });
 }

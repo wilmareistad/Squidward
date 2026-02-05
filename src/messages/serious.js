@@ -1,5 +1,5 @@
 export const serious = {
-  header: () => `⚠️ Founded issues:`, 
+  header: () => `⚠️ Found problems:`, 
 
   tooLongFile: (filename, lines) => 
     `File "${filename}" is too long (${lines} lines). Consider breaking it up.`,
