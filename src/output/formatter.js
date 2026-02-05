@@ -18,7 +18,7 @@ export function printResults(results, mode = "passive") {
 
     const coloredMessage = mode === "serious"
       ? chalk.cyanBright(message)
-      : chalk.hex('#FDA17D')(message);
+      : chalk.hex('#39FF14')(message);
 
     console.log(coloredMessage);
   });
