@@ -60,12 +60,12 @@ allResults.forEach((result) => {
     result.passiveMessage = passive.badVariableName(
       result.name,
       result.line,
-      r.reason,
+      result.reason,
     );
     result.seriousMessage = serious.badVariableName(
       result.name,
       result.line,
-      r.reason,
+      result.reason,
     );
   }
 
