@@ -1,12 +1,13 @@
 export function checkCssSelectors(code) {
+    const results = [];
 
-    const selectorRegex = /([^{]+)\{/g;
+    const selectorRegex = /([^{\n]+)\s*\{/g;
 
     let totalSelectors = 0;
     let classSelectors = 0;
     let match;
 
-    while ((match = selectorRegex.exec(cssCode)) !== null) {
+    while ((match = selectorRegex.exec(code)) !== null) {
     const selectors = match[1]
       .split(",")
       .map(s => s.trim());

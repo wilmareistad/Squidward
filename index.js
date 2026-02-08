@@ -16,6 +16,7 @@ import { serious } from "./src/messages/serious.js";
 import { printResults } from "./src/output/formatter.js";
 
 import { Command } from "commander";
+import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
 
 const program = new Command();
 
@@ -48,6 +49,7 @@ const allResults = [
   ...checkFileLength(code),
   ...checkVariableNames(code),
   ...checkDuplicates(code),
+  ...checkCssSelectors(code)
 ];
 
 allResults.forEach((result) => {
@@ -64,6 +66,11 @@ allResults.forEach((result) => {
   if (result.type === "duplication") {
     result.passiveMessage = passive.duplicateCode(result.lines);
     result.seriousMessage = serious.duplicateCode(result.lines);
+  }
+
+  if (result.type === "css-selectors") {
+    result.passiveMessage = passive.checkCssSelectors(result.ratio);
+    result.seriousMessage = serious.checkCssSelectors(result.ratio, result.totalSelectors, result.classSelectors)
   }
 });
 
