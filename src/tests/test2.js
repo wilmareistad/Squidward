@@ -2,18 +2,18 @@
 //   console.log("Hello world!");
 // }
 
-// let å = 5;
-// const å = "test";
-// var å = 10;
+let å = 5;
+const å = "test";
+var å = 10;
 
-// let count = 0;
-// let count = 0;
-// let count = 0;
-// let count = 0;
+let count = 0;
+let count = 0;
+let count = 0;
+let count = 0;
 
-// let å = 5;
-// const å = "test";
-// var å = 10;
+let å = 5;
+const å = "test";
+var å = 10;
 
 // let x = 5;
 
