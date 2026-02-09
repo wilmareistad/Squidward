@@ -15,4 +15,8 @@ export const passive = {
 
   duplicateCode: (lines) =>
     `I’ve seen this code before… at lines ${lines.join(", ")}. Maybe DRY it up a bit?`,
+
+  checkCssSelectors: (ratio) =>
+    `${Math.round(ratio * 100)}% of the selectors are class selectors. Maybe a little too many?`
+
 };

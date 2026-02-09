@@ -16,4 +16,7 @@ export const serious = {
 
   duplicateCode: (lines) =>
     `Duplicate code found at lines: ${lines.join(", ")}. Use DRY code.`,
+
+   checkCssSelectors: (ratio, total, classes) =>
+    `CSS-analys: ${classes} of ${total} selectors (${Math.round(ratio * 100)}%) is class-selectors. This may indicate excessive use of classes.`
 };
