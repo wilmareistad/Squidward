@@ -1,22 +1,29 @@
 export const passive = {
-  header: () => `⚠️ You are not really good, look what I found:`,
+  header: () => `⚠️ Well, look what I stumbled upon…`,
 
   tooLongFile: (filename, lines) =>
-    `File ${filename} has ${lines} rows, do it better.. Use a function!`,
+    `File ${filename} has ${lines} lines. Did you write a novel instead of code? Try using a function!`,
 
   badVariableName: (varName, line, reason) => {
     let reasonText = "";
-    if (reason === "bad name") reasonText = "Come on, pick a proper name!";
+    if (reason === "bad name") reasonText = "";
     else if (reason === "naming convention")
-      reasonText = "Use camelCase or snake_case, seriously.";
+      reasonText = "CamelCase or snake_case called… they’re waiting for you.";
 
-    return `Line ${line}: Should I understand what "${varName}" means?? ${reasonText}`;
+      const extraShade = [
+    `Are we naming "${varName}" randomly now?`,
+    `Hmm… interesting choice of a name: "${varName}", not impressed.`,
+    `"${varName}"? I guess that's fine… if you hate yourself.`
+  ];
+
+    const randomShade = extraShade[Math.floor(Math.random() * extraShade.length)];
+
+    return `Line ${line}: ${reasonText} ${randomShade}`;
   },
 
   duplicateCode: (lines) =>
-    `I’ve seen this code before… at lines ${lines.join(", ")}. Maybe DRY it up a bit?`,
+    `Déjà vu! Lines ${lines.join(", ")} are suspiciously similar. Ever heard of DRY?`,
 
   checkCssSelectors: (ratio) =>
-    `${Math.round(ratio * 100)}% of the selectors are class selectors. Maybe a little too many?`
-
+    `${Math.round(ratio * 100)}% of your selectors are classes. Whoa… are we overclassing everything?`
 };

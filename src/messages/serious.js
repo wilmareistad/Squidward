@@ -1,5 +1,5 @@
 export const serious = {
-  header: () => `⚠️ Found problems:`,
+  header: () => `⚠️ Issues found in your code:`,
 
   tooLongFile: (filename, lines) =>
     `File "${filename}" is too long (${lines} lines). Consider breaking it up.`,
@@ -7,11 +7,11 @@ export const serious = {
   badVariableName: (varName, line, reason) => {
     let reasonText = "";
     if (reason === "bad name")
-      reasonText = "Use a more descriptive variable name.";
+      reasonText = "Choose a descriptive name that reflects the variable's purpose.";
     else if (reason === "naming convention")
-      reasonText = "Variable names should follow camelCase or snake_case.";
+      reasonText = "Variable names should follow camelCase or snake_case standard.";
 
-    return `Line ${line}: Variable "${varName}" is unclear and should be renamed ${reasonText}`;
+    return `Line ${line}: Variable "${varName}" is unclear. ${reasonText}`;
   },
 
   duplicateCode: (lines) =>
