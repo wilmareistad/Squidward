@@ -1,5 +1,5 @@
 // 3 rader är lagom så att man inte får falska positiva
-export function checkDuplicates(code, blockSize = 3) {
+export function checkDuplicates(code, blockSize = 1) {
   const rawLines = code.split("\n");
 
   // Vi jämför block utan tomma rader
