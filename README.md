@@ -36,3 +36,4 @@ squidward test.js
 ```bash
 squidward test.js --serious
 ```
+
