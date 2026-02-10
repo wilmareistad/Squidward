@@ -1,0 +1,204 @@
+// testSquidward.js
+
+// testing naming
+let x = 5;
+const myVar = 2;
+var MY_VAR = 3;
+let temp_value = 4;
+let anotherVar =
+
+// testing dubbel code
+let dupVar = 1;
+let dupVar = 1;
+let dupVar = 1;
+let dupVar = 1;
+function dupFunc() {}
+function dupFunc() {}
+
+
+// testing camelcase and snakecase
+let snake_var = 1;
+let camelVar = 2;
+let iUseCamelMost = 3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let dupVar = 1;
