@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// analysers
+// Analysers
 import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 import { checkDuplicates } from "./src/analysers/duplicates.js";
@@ -11,11 +11,11 @@ import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
 import { askForAnimations } from "./src/ui/animation.js";
 
-// Meddelanden
+// Messages
 import { passive } from "./src/messages/passive.js";
 import { serious } from "./src/messages/serious.js";
 
-// Formattering
+// Formetter
 import { printResults } from "./src/output/formatter.js";
 
 import { Command } from "commander";

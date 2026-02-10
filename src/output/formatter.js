@@ -26,7 +26,7 @@ export async function printResults(
 
   const header = mode === "serious" ? serious.header() : passive.header();
 
-  // start animation
+  // Start animation
   if (animationsEnabled) {
     const anim = chalkAnimation.rainbow(header);
     await new Promise((r) => setTimeout(r, 2000));
