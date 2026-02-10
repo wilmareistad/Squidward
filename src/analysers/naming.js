@@ -1,4 +1,4 @@
-// Kontrollera variabelnamn: både "dåliga namn" och camelCase/snake_case
+// Check variable names: both "bad names" and camelCase/snake_case.
 export function checkVariableNames(code) {
   const results = [];
 
@@ -11,7 +11,7 @@ export function checkVariableNames(code) {
     const lineNumber = index + 1;
     const trimmed = lineText.trim();
 
-    // Hoppa över tomma rader och kommentarer
+    // Ignores empty rows and commentaries
     if (!trimmed || trimmed.startsWith("//")) return;
 
     const match = varRegex.exec(lineText);
@@ -20,7 +20,7 @@ export function checkVariableNames(code) {
     const declaration = match[1];
     const name = match[2];
 
-    // 1️⃣ Dåliga variabelnamn
+    // 1️⃣ Bad variable names
     if (badNames.includes(name)) {
       results.push({
         type: "naming",
@@ -32,7 +32,7 @@ export function checkVariableNames(code) {
       return;
     }
 
-    // 2️⃣ camelCase eller snake_case
+    // 2️⃣ camelCase or snake_case
     const camelCase = /^[a-z][a-zA-Z0-9]*$/;
     const snake_case = /^[a-z][a-z0-9_]*$/;
 
