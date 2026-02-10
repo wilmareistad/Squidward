@@ -32,5 +32,5 @@ export const passive = {
     `Variable "${name}" uses ${actual}, but most variables are ${expected}.`,
 
   badVariableStyleSummary: (dominantStyle) =>
-    `Most of your variables use ${dominantStyle}. Maybe be consistent and stick to it?`,
+    `There’s a clear preference for ${dominantStyle}. Some variables just chose to ignore it.`,
 };
