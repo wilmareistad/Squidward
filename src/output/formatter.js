@@ -9,8 +9,18 @@ export async function printResults(
   mode = "passive",
   animationsEnabled = false,
 ) {
+
   if (results.length === 0) {
-    console.log(chalk.green("✅ Congratulations you did good!"));
+    const message = "✅ Congratulations you did good!";
+
+    if (animationsEnabled) {
+      const animation = chalkAnimation.rainbow(message, 5);
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      animation.stop();
+    } else {
+      console.log(chalk.green(message));
+    }
+
     return;
   }
 
