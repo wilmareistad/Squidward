@@ -62,16 +62,8 @@ allResults.forEach((result) => {
   }
 
   if (result.type === "naming") {
-    result.passiveMessage = passive.badVariableName(
-      result.name,
-      result.line,
-      result.reason,
-    );
-    result.seriousMessage = serious.badVariableName(
-      result.name,
-      result.line,
-      result.reason,
-    );
+    result.passiveMessage = passive.badVariableName(result.name, result.line, result.reason);
+    result.seriousMessage = serious.badVariableName( result.name, result.line, result.reason);
   }
 
   if (result.type === "duplication") {
@@ -81,20 +73,12 @@ allResults.forEach((result) => {
 
   if (result.type === "css-selectors") {
     result.passiveMessage = passive.checkCssSelectors(result.ratio);
-    result.seriousMessage = serious.checkCssSelectors(
-      result.ratio,
-      result.totalSelectors,
-      result.classSelectors,
-    );
+    result.seriousMessage = serious.checkCssSelectors( result.ratio, result.totalSelectors, result.classSelectors);
   }
 
   if (result.type === "variableStyle") {
-    result.passiveMessage = passive.badVariableStyleSummary(
-      result.dominantStyle,
-    );
-    result.seriousMessage = serious.badVariableStyleSummary(
-      result.dominantStyle,
-    );
+    result.passiveMessage = passive.badVariableStyleSummary(result.dominantStyle);
+    result.seriousMessage = serious.badVariableStyleSummary(result.dominantStyle);
   }
 });
 
