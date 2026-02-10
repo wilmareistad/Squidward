@@ -4,6 +4,7 @@
 import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 import { checkDuplicates } from "./src/analysers/duplicates.js";
+import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
 
 import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
@@ -16,7 +17,6 @@ import { serious } from "./src/messages/serious.js";
 import { printResults } from "./src/output/formatter.js";
 
 import { Command } from "commander";
-import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
 
 const program = new Command();
 
