@@ -8,6 +8,7 @@ import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
 
 import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
+import { askForAnimations } from "./src/ui/animation.js";
 
 // Meddelanden
 import { passive } from "./src/messages/passive.js";
@@ -82,4 +83,7 @@ allResults.forEach((result) => {
   }
 });
 
-printResults(allResults, mode);
+// printResults(allResults, mode);
+const animationsEnabled = await askForAnimations();
+await printResults(allResults, mode, animationsEnabled);
+
