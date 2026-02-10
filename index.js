@@ -4,7 +4,7 @@
 import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 import { checkDuplicates } from "./src/analysers/duplicates.js";
-import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
+import { checkVariableStyle } from "./src/analysers/variableStyle.js";
 
 import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
@@ -49,7 +49,8 @@ const allResults = [
   ...checkFileLength(code),
   ...checkVariableNames(code),
   ...checkDuplicates(code),
-  ...checkCssSelectors(code)
+  ...checkCssSelectors(code),
+  ...checkVariableStyle(code),
 ];
 
 allResults.forEach((result) => {
@@ -78,7 +79,11 @@ allResults.forEach((result) => {
 
   if (result.type === "css-selectors") {
     result.passiveMessage = passive.checkCssSelectors(result.ratio);
-    result.seriousMessage = serious.checkCssSelectors(result.ratio, result.totalSelectors, result.classSelectors)
+    result.seriousMessage = serious.checkCssSelectors(
+      result.ratio,
+      result.totalSelectors,
+      result.classSelectors,
+    );
   }
 });
 
