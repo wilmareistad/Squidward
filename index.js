@@ -86,6 +86,15 @@ allResults.forEach((result) => {
       result.classSelectors,
     );
   }
+
+  if (result.type === "variableStyle") {
+    result.passiveMessage = passive.badVariableStyleSummary(
+      result.dominantStyle,
+    );
+    result.seriousMessage = serious.badVariableStyleSummary(
+      result.dominantStyle,
+    );
+  }
 });
 
 // printResults(allResults, mode);
