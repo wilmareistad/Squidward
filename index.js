@@ -50,9 +50,9 @@ if (!code.trim()) {
 const allResults = [
   ...checkFileLength(code),
   ...checkVariableNames(code),
+  ...checkVariableStyle(code),
   ...checkDuplicates(code),
   ...checkCssSelectors(code),
-  ...checkVariableStyle(code),
 ];
 
 allResults.forEach((result) => {
@@ -66,6 +66,11 @@ allResults.forEach((result) => {
     result.seriousMessage = serious.badVariableName( result.name, result.line, result.reason);
   }
 
+  if (result.type === "variableStyle") {
+    result.passiveMessage = passive.badVariableStyleSummary(result.dominantStyle);
+    result.seriousMessage = serious.badVariableStyleSummary(result.dominantStyle);
+  }
+
   if (result.type === "duplication") {
     result.passiveMessage = passive.duplicateCode(result.lines);
     result.seriousMessage = serious.duplicateCode(result.lines);
@@ -74,11 +79,6 @@ allResults.forEach((result) => {
   if (result.type === "css-selectors") {
     result.passiveMessage = passive.checkCssSelectors(result.ratio);
     result.seriousMessage = serious.checkCssSelectors( result.ratio, result.totalSelectors, result.classSelectors);
-  }
-
-  if (result.type === "variableStyle") {
-    result.passiveMessage = passive.badVariableStyleSummary(result.dominantStyle);
-    result.seriousMessage = serious.badVariableStyleSummary(result.dominantStyle);
   }
 });
 
