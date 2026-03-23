@@ -5,7 +5,7 @@ import { checkVariableNames } from "./src/analysers/naming.js";
 import { checkFileLength } from "./src/analysers/length.js";
 import { checkDuplicates } from "./src/analysers/duplicates.js";
 import { checkVariableStyle } from "./src/analysers/variableStyle.js";
-import {checkCssSelectors} from "./src/analysers/cssSelectors.js";
+import { checkCssSelectors } from "./src/analysers/cssSelectors.js";
 
 import { handleError } from "./src/errors.js";
 import { readFileSync } from "fs";
@@ -44,7 +44,7 @@ try {
 }
 
 if (!code.trim()) {
-  handleError("File is empty.");
+  handleError("The file you chose is empty. Add something to the file or choose another file.");
 }
 
 const allResults = [
