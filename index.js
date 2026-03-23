@@ -86,4 +86,4 @@ allResults.forEach((result) => {
 const animationsEnabled = await askForAnimations();
 await printResults(allResults, mode, animationsEnabled);
 
-// Hej code Reviewer whats up hej hej
+// Hej code Reviewer whats up
