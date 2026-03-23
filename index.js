@@ -86,3 +86,4 @@ allResults.forEach((result) => {
 const animationsEnabled = await askForAnimations();
 await printResults(allResults, mode, animationsEnabled);
 
+// Hej code Reviewer whats up
